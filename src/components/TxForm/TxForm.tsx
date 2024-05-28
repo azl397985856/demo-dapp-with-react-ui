@@ -42,6 +42,8 @@ export function TxForm() {
 
   const [tonConnectUi] = useTonConnectUI();
 
+  console.log('getWallets', tonConnectUi.getWallets())
+
   const onChange = useCallback((value: InteractionProps) => {
     setTx(value.updated_src as SendTransactionRequest)
   }, []);
