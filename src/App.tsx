@@ -5,6 +5,8 @@ import {TxForm} from "./components/TxForm/TxForm";
 import {Footer} from "./components/Footer/Footer";
 import {TonProofDemo} from "./components/TonProofDemo/TonProofDemo";
 import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
+
+// @ts-ignore
 window.tonkeeper123 = {
   provider: {
     callbacks: {

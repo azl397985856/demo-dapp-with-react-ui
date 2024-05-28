@@ -33,9 +33,7 @@ const defaultTx: SendTransactionRequest = {
 
   ],
 };
-  async function t() {
-    console.log('getWallets', await tonConnectUi.getWallets())
-  }
+
 export function TxForm() {
 
   const [tx, setTx] = useState(defaultTx);
@@ -43,7 +41,9 @@ export function TxForm() {
   const wallet = useTonWallet();
 
   const [tonConnectUi] = useTonConnectUI();
-
+  async function t() {
+    console.log('getWallets', await tonConnectUi.getWallets())
+  }
 
   t()
   setTimeout(t, 1000)
