@@ -34,7 +34,7 @@ const defaultTx: SendTransactionRequest = {
   ],
 };
   async function t() {
-    console.log('getWallets', tonConnectUi.getWallets())
+    console.log('getWallets', await tonConnectUi.getWallets())
   }
 export function TxForm() {
 
