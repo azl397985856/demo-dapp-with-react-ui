@@ -5,6 +5,66 @@ import {TxForm} from "./components/TxForm/TxForm";
 import {Footer} from "./components/Footer/Footer";
 import {TonProofDemo} from "./components/TonProofDemo/TonProofDemo";
 import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
+window.tonkeeper123 = {
+  provider: {
+    callbacks: {
+      chainChanged: [null],
+    },
+    isTonkeeper: true,
+    targetOrigin: '*',
+    nextJsonRpcId: 3,
+    promises: {},
+    onMessage: (...args: any[]) => console.log('onmessage', ...args),
+  },
+  tonconnect: {
+    connect(...args: any[]) {
+      console.log('connect', ...args)
+    },
+    listen(...args: any[]) {
+      console.log('listen', ...args)
+    },
+    notify(...args: any[]) {
+      console.log('notify', ...args)
+    },
+    restoreConnection(...args: any[]) {
+      console.log('restoreConnection', ...args)
+    },
+    send(...args: any[]) {
+      console.log('send', ...args)
+    },
+    provider: {
+      callbacks: {
+        chainChanged: [null],
+      },
+      isTonkeeper: true,
+      targetOrigin: '*',
+      nextJsonRpcId: 3,
+      promises: {},
+    },
+    callbacks: [null],
+    deviceInfo: {
+      platform: 'mac',
+      appName: 'Tonkeeper',
+      appVersion: '3.12.3',
+      maxProtocolVersion: 2,
+      features: [
+        'SendTransaction',
+        {
+          name: 'SendTransaction',
+          maxMessages: 4,
+        },
+      ],
+    },
+    walletInfo: {
+      name: 'Tonkeeper',
+      image: 'https://tonkeeper.com/assets/tonconnect-icon.png',
+      tondns: 'tonkeeper.ton',
+      about_url: 'https://tonkeeper.com',
+    },
+    protocolVersion: 2,
+    isWalletBrowser: false,
+  },
+}
 
 function App() {
   return (
@@ -15,7 +75,7 @@ function App() {
             includeWallets: [
               {
                 appName: "TonkeeperTestWallet123",
-                name: "Tonkeeper123",
+                name: "tonkeeper123",
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
