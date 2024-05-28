@@ -19,6 +19,7 @@ export const checkProof: HttpResponseResolver = async ({request}) => {
     const service = new TonProofService();
     console.log('checkProof', body)
     const isValid = await service.checkProof(body, (address) => client.getWalletPublicKey(address));
+    console.log('checkProof after', body)
     if (!isValid) {
       return badRequest({error: 'Invalid proof'});
     }

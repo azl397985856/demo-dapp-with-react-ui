@@ -29,12 +29,13 @@ export class TonProofService {
   public async checkProof(payload: CheckProofRequestDto, getWalletPublicKey: (address: string) => Promise<Buffer | null>): Promise<boolean> {
     try {
       const stateInit = loadStateInit(Cell.fromBase64(payload.proof.state_init).beginParse());
-
+      console.log('checkProof stateInit', stateInit)
       // 1. First, try to obtain public key via get_public_key get-method on smart contract deployed at Address.
       // 2. If the smart contract is not deployed yet, or the get-method is missing, you need:
       //  2.1. Parse TonAddressItemReply.walletStateInit and get public key from stateInit. You can compare the walletStateInit.code
       //  with the code of standard wallets contracts and parse the data according to the found wallet version.
       let publicKey = tryParsePublicKey(stateInit) ?? await getWalletPublicKey(payload.address);
+      console.log('checkProof publicKey', publicKey)
       if (!publicKey) {
         return false;
       }
@@ -47,7 +48,9 @@ export class TonProofService {
 
       // 2.3. Check that TonAddressItemReply.walletStateInit.hash() equals to TonAddressItemReply.address. .hash() means BoC hash.
       const wantedAddress = Address.parse(payload.address);
+      console.log('checkProof wantedAddress 2121', wantedAddress)
       const address = contractAddress(wantedAddress.workChain, stateInit);
+      console.log('checkProof wantedAddress', wantedAddress, address)
       if (!address.equals(wantedAddress)) {
         return false;
       }
@@ -108,7 +111,7 @@ export class TonProofService {
       ]);
 
       const result = Buffer.from(await sha256(fullMsg));
-
+      console.log('checkProof wantedAddress gggg', wantedAddress)
       return sign.detached.verify(result, message.signature, publicKey);
     } catch (e) {
       return false;
