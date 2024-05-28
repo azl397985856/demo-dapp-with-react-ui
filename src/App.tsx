@@ -58,10 +58,12 @@ window.tonkeeper123 = {
       ],
     },
     walletInfo: {
-      name: 'Tonkeeper',
+      "app_name": 'TonkeeperTestWallet123',
+      name: 'tonkeeper123',
       image: 'https://tonkeeper.com/assets/tonconnect-icon.png',
       tondns: 'tonkeeper.ton',
       about_url: 'https://tonkeeper.com',
+      platforms: ["ios", "android", "chrome", "firefox"]
     },
     protocolVersion: 2,
     isWalletBrowser: false,
