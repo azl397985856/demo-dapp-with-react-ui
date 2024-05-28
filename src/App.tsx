@@ -19,7 +19,7 @@ function App() {
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
-                jsBridgeKey: "tonkeeper",
+                jsBridgeKey: "tonkeeper123",
                 platforms: ["ios", "android", "chrome", "firefox"]
               }
             ]
