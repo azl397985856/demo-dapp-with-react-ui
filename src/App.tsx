@@ -14,7 +14,7 @@ function App() {
           walletsListConfiguration={{
             includeWallets: [
               {
-                appName: "Tonkeeper test Wallet",
+                appName: "TonkeeperTestWallet",
                 name: "Tonkeeper",
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
                 tondns: "",
