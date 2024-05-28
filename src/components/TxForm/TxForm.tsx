@@ -33,7 +33,9 @@ const defaultTx: SendTransactionRequest = {
 
   ],
 };
-
+  async function t() {
+    console.log('getWallets', tonConnectUi.getWallets())
+  }
 export function TxForm() {
 
   const [tx, setTx] = useState(defaultTx);
@@ -42,7 +44,9 @@ export function TxForm() {
 
   const [tonConnectUi] = useTonConnectUI();
 
-  console.log('getWallets', tonConnectUi.getWallets())
+
+  t()
+  setTimeout(t, 1000)
 
   const onChange = useCallback((value: InteractionProps) => {
     setTx(value.updated_src as SendTransactionRequest)
