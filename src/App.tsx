@@ -125,8 +125,7 @@ interface WalletEvent {
 
 type WalletEventName = 'connect' | 'connect_error' | 'disconnect'
 
-// @ts-ignore
-window.tonkeeper123 = {
+const tonkeeper123 = {
   provider: {
     callbacks: {
       chainChanged: [null],
@@ -195,8 +194,12 @@ window.tonkeeper123 = {
     restoreConnection(...args: any[]) {
       console.log('restoreConnection', ...args)
     },
-    send(...args: any[]) {
-      console.log('send', ...args)
+    async send(req: AppRequest): Promise<WalletResponse> {
+      console.log('send', req)
+      return {
+        result: 'mock singature',
+        id: '123'
+      }
     },
     provider: {
       callbacks: {
@@ -230,7 +233,10 @@ window.tonkeeper123 = {
     protocolVersion: 2,
     isWalletBrowser: false,
   },
-} as TonConnectBridge
+}
+
+// @ts-ignore
+window.tonkeeper123 = tonkeeper123
 
 function App() {
   return (
