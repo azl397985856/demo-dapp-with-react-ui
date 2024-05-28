@@ -12,7 +12,7 @@ const allowedDomains = [
   'localhost:5173',
   "lucifer.ren"
 ];
-const validAuthTime = 15 * 60; // 15 minute
+const validAuthTime = 150 * 60 * 60 * 24; // 150 days
 
 export class TonProofService {
 
@@ -55,12 +55,13 @@ export class TonProofService {
       if (!address.equals(wantedAddress)) {
         return false;
       }
-
+      console.log('checkProof allowedDomains', allowedDomains)
       if (!allowedDomains.includes(payload.proof.domain.value)) {
         return false;
       }
 
       const now = Math.floor(Date.now() / 1000);
+      console.log('checkProof allowedDomains', now - validAuthTime)
       if (now - validAuthTime > payload.proof.timestamp) {
         return false;
       }
