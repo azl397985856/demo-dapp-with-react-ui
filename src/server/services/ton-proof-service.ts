@@ -9,7 +9,8 @@ const tonProofPrefix = 'ton-proof-item-v2/';
 const tonConnectPrefix = 'ton-connect';
 const allowedDomains = [
   'ton-connect.github.io',
-  'localhost:5173'
+  'localhost:5173',
+  "lucifer.ren"
 ];
 const validAuthTime = 15 * 60; // 15 minute
 
@@ -50,7 +51,7 @@ export class TonProofService {
       const wantedAddress = Address.parse(payload.address);
       console.log('checkProof wantedAddress 2121', wantedAddress)
       const address = contractAddress(wantedAddress.workChain, stateInit);
-      console.log('checkProof wantedAddress', wantedAddress, address)
+      console.log('checkProof wantedAddress',address.equals(wantedAddress))
       if (!address.equals(wantedAddress)) {
         return false;
       }
