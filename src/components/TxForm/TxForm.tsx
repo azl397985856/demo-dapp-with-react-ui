@@ -42,7 +42,7 @@ export function TxForm() {
 
   const [tonConnectUi] = useTonConnectUI();
   async function t() {
-    console.log('getWallets', await tonConnectUi.getWallets())
+    console.log('getWallets123', await tonConnectUi.getWallets())
   }
 
   t()
