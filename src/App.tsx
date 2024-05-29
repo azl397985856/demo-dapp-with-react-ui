@@ -125,7 +125,7 @@ interface WalletEvent {
 
 type WalletEventName = 'connect' | 'connect_error' | 'disconnect'
 
-const tonkeeper123 = {
+const tonkeeper1234 = {
   provider: {
     callbacks: {
       chainChanged: [null],
@@ -203,6 +203,7 @@ const tonkeeper123 = {
       console.log('notify', ...args)
     },
     restoreConnection(...args: any[]) {
+      // TODO: [TON] connect 需要调用 notify 来触发用户注册的 handler
       console.log('restoreConnection', ...args)
     },
     async send(req: AppRequest): Promise<WalletResponse> {
@@ -238,7 +239,7 @@ const tonkeeper123 = {
       ],
     },
     walletInfo: {
-      name: 'tonkeeper123',
+      name: 'tonkeeper1234',
       image: 'https://tonkeeper.com/assets/tonconnect-icon.png',
       tondns: 'tonkeeper.ton',
       about_url: 'https://tonkeeper.com',
@@ -249,7 +250,7 @@ const tonkeeper123 = {
 }
 
 // @ts-ignore
-window.tonkeeper123 = tonkeeper123
+window.tonkeeper1234 = tonkeeper1234
 
 function App() {
   return (
@@ -260,11 +261,11 @@ function App() {
             includeWallets: [
               {
                 appName: "TonkeeperTestWallet123",
-                name: "tonkeeper123",
+                name: "tonkeeper1234",
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
-                jsBridgeKey: "tonkeeper123",
+                jsBridgeKey: "tonkeeper1234",
                 platforms: ["ios", "android", "chrome", "firefox"]
               }
             ]
