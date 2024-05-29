@@ -138,20 +138,21 @@ const tonkeeper123 = {
   },
   tonconnect: {
     async connect(protocolVersion: number, message: ConnectRequest): Promise<ConnectEvent> {
-      console.log('connect with ton_proof', protocolVersion, message)
+      console.log('connect without ton_addr with ton_proof', protocolVersion, message)
+      // TODO: [TON] connect, connect_error 需要调用 notify 来触发用户注册的 handler
       return {
         event: 'connect',
         id: 1716908283733,
         payload: {
           items: [
-            {
-              name: 'ton_addr',
-              address: '0:f6ec31912994229d903edc42e23475be311599e14856620a2629307ee08be8c9',
-              network: '-239' as NETWORK,
-              walletStateInit:
-                'te6cckECFgEAAwQAAgE0AgEAUQAAAAApqaMXdgs06RoUlFDYAZyWDsCurtuEoQYYKXUSk5gwT4bK0fdAART/APSkE/S88sgLAwIBIAkEBPjygwjXGCDTH9Mf0x8C+CO78mTtRNDTH9Mf0//0BNFRQ7ryoVFRuvKiBfkBVBBk+RDyo/gAJKTIyx9SQMsfUjDL/1IQ9ADJ7VT4DwHTByHAAJ9sUZMg10qW0wfUAvsA6DDgIcAB4wAhwALjAAHAA5Ew4w0DpMjLHxLLH8v/CAcGBQAK9ADJ7VQAbIEBCNcY+gDTPzBSJIEBCPRZ8qeCEGRzdHJwdIAYyMsFywJQBc8WUAP6AhPLassfEss/yXP7AABwgQEI1xj6ANM/yFQgR4EBCPRR8qeCEG5vdGVwdIAYyMsFywJQBs8WUAT6AhTLahLLH8s/yXP7AAIAbtIH+gDU1CL5AAXIygcVy//J0Hd0gBjIywXLAiLPFlAF+gIUy2sSzMzJc/sAyEAUgQEI9FHypwICAUgTCgIBIAwLAFm9JCtvaiaECAoGuQ+gIYRw1AgIR6STfSmRDOaQPp/5g3gSgBt4EBSJhxWfMYQCASAODQARuMl+1E0NcLH4AgFYEg8CASAREAAZrx32omhAEGuQ64WPwAAZrc52omhAIGuQ64X/wAA9sp37UTQgQFA1yH0BDACyMoHy//J0AGBAQj0Cm+hMYALm0AHQ0wMhcbCSXwTgItdJwSCSXwTgAtMfIYIQcGx1Z70ighBkc3RyvbCSXwXgA/pAMCD6RAHIygfL/8nQ7UTQgQFA1yH0BDBcgQEI9ApvoTGzkl8H4AXTP8glghBwbHVnupI4MOMNA4IQZHN0crqSXwbjDRUUAIpQBIEBCPRZMO1E0IEBQNcgyAHPFvQAye1UAXKwjiOCEGRzdHKDHrFwgBhQBcsFUAPPFiP6AhPLassfyz/JgED7AJJfA+IAeAH6APQEMPgnbyIwUAqhIb7y4FCCEHBsdWeDHrFwgBhQBMsFJs8WWPoCGfQAy2kXyx9SYMs/IMmAQPsABntvxc8=',
-              publicKey: '760b34e91a149450d8019c960ec0aeaedb84a106182975129398304f86cad1f7',
-            },
+            // {
+            //   name: 'ton_addr',
+            //   address: '0:f6ec31912994229d903edc42e23475be311599e14856620a2629307ee08be8c9',
+            //   network: '-239' as NETWORK,
+            //   walletStateInit:
+            //     'te6cckECFgEAAwQAAgE0AgEAUQAAAAApqaMXdgs06RoUlFDYAZyWDsCurtuEoQYYKXUSk5gwT4bK0fdAART/APSkE/S88sgLAwIBIAkEBPjygwjXGCDTH9Mf0x8C+CO78mTtRNDTH9Mf0//0BNFRQ7ryoVFRuvKiBfkBVBBk+RDyo/gAJKTIyx9SQMsfUjDL/1IQ9ADJ7VT4DwHTByHAAJ9sUZMg10qW0wfUAvsA6DDgIcAB4wAhwALjAAHAA5Ew4w0DpMjLHxLLH8v/CAcGBQAK9ADJ7VQAbIEBCNcY+gDTPzBSJIEBCPRZ8qeCEGRzdHJwdIAYyMsFywJQBc8WUAP6AhPLassfEss/yXP7AABwgQEI1xj6ANM/yFQgR4EBCPRR8qeCEG5vdGVwdIAYyMsFywJQBs8WUAT6AhTLahLLH8s/yXP7AAIAbtIH+gDU1CL5AAXIygcVy//J0Hd0gBjIywXLAiLPFlAF+gIUy2sSzMzJc/sAyEAUgQEI9FHypwICAUgTCgIBIAwLAFm9JCtvaiaECAoGuQ+gIYRw1AgIR6STfSmRDOaQPp/5g3gSgBt4EBSJhxWfMYQCASAODQARuMl+1E0NcLH4AgFYEg8CASAREAAZrx32omhAEGuQ64WPwAAZrc52omhAIGuQ64X/wAA9sp37UTQgQFA1yH0BDACyMoHy//J0AGBAQj0Cm+hMYALm0AHQ0wMhcbCSXwTgItdJwSCSXwTgAtMfIYIQcGx1Z70ighBkc3RyvbCSXwXgA/pAMCD6RAHIygfL/8nQ7UTQgQFA1yH0BDBcgQEI9ApvoTGzkl8H4AXTP8glghBwbHVnupI4MOMNA4IQZHN0crqSXwbjDRUUAIpQBIEBCPRZMO1E0IEBQNcgyAHPFvQAye1UAXKwjiOCEGRzdHKDHrFwgBhQBcsFUAPPFiP6AhPLassfyz/JgED7AJJfA+IAeAH6APQEMPgnbyIwUAqhIb7y4FCCEHBsdWeDHrFwgBhQBMsFJs8WWPoCGfQAy2kXyx9SYMs/IMmAQPsABntvxc8=',
+            //   publicKey: '760b34e91a149450d8019c960ec0aeaedb84a106182975129398304f86cad1f7',
+            // },
             // {
             //   name: "ton_proof",
             //   // @ts-ignore
@@ -195,6 +196,7 @@ const tonkeeper123 = {
       }
     },
     listen(...args: any[]) {
+      // TODO: [TON] 添加到 set
       console.log('listen', ...args)
     },
     notify(...args: any[]) {
@@ -205,7 +207,8 @@ const tonkeeper123 = {
     },
     async send(req: AppRequest): Promise<WalletResponse> {
       console.log('send', req)
-      // req.method: signData, sendTransaction, disconnect, signMessage
+       // TODO: [TON]  disconnect 需要调用 notify 来触发用户注册的 handler
+      // req.method: signData, sendTransaction, disconnect, [signMessage???]
       return {
         result: 'mock singature',
         id: req.id
