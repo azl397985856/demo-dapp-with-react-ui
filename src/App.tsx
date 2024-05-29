@@ -266,7 +266,7 @@ function App() {
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
                 jsBridgeKey: "tonkeeper1234",
-                platforms: ["ios", "android", "chrome", "firefox"]
+                platforms: ["chrome", "safari"]
               },
               {
                 appName: "new-wallet",
@@ -275,7 +275,7 @@ function App() {
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
                 jsBridgeKey: "tonkeeper123",
-                platforms: ["ios", "android", "chrome", "firefox"]
+                platforms: ["chrome", "safari"]
               }
             ]
           }}
