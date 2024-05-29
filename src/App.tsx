@@ -205,9 +205,10 @@ const tonkeeper123 = {
     },
     async send(req: AppRequest): Promise<WalletResponse> {
       console.log('send', req)
+      // req.method: signData, sendTransaction, disconnect, signMessage
       return {
         result: 'mock singature',
-        id: '123'
+        id: req.id
       }
     },
     provider: {
