@@ -28,7 +28,7 @@ async function enableMocking() {
       const serviceWorkerRegistrations = await navigator.serviceWorker.getRegistrations();
 
       const isServiceWorkerOk = serviceWorkerRegistrations.length > 0;
-      const isApiOk = await fetch('/api/healthz')
+      const isApiOk = await fetch(`${import.meta.env.VITE_GH_PAGES ? '/demo-dapp-with-react-ui/' : ''}/api/healthz`)
         .then(r => r.status === 200 ? r.json().then(p => p.ok).catch(() => false) : false);
 
       if (!isServiceWorkerOk || !isApiOk) {
