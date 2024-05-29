@@ -260,8 +260,8 @@ function App() {
           walletsListConfiguration={{
             includeWallets: [
               {
-                appName: "TonkeeperTestWallet123",
-                name: "tonkeeper1234",
+                appName: "tk",
+                name: "tk",
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
