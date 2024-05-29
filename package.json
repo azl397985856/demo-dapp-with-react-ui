@@ -8,7 +8,7 @@
     "build": "tsc && GH_PAGES=true VITE_GH_PAGES=true vite build",
     "build:dev": "tsc && vite build",
     "preview": "vite preview",
-    "pages": "yarn build && git add . && git commit -m 'publish'"
+    "pages": "yarn build && git add . && git commit -m 'publish' && git push"
   },
   "dependencies": {
     "@ton-community/assets-sdk": "^0.0.4",
