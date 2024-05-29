@@ -267,6 +267,15 @@ function App() {
                 aboutUrl: "https://www.safepal.com",
                 jsBridgeKey: "tonkeeper1234",
                 platforms: ["ios", "android", "chrome", "firefox"]
+              },
+              {
+                appName: "new-wallet",
+                name: "new-wallet",
+                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+                tondns: "",
+                aboutUrl: "https://www.safepal.com",
+                jsBridgeKey: "tonkeeper123",
+                platforms: ["ios", "android", "chrome", "firefox"]
               }
             ]
           }}
