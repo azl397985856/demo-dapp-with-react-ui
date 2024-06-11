@@ -42,7 +42,7 @@ export const TonProofDemo = () => {
 				setAuthorized(false);
 				return;
 			}
-
+			console.log('onStatusChange', w)
 			if (w.connectItems?.tonProof && 'proof' in w.connectItems.tonProof) {
 				await TonProofDemoApi.checkProof(w.connectItems.tonProof.proof, w.account);
 			}
