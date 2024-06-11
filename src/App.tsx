@@ -266,6 +266,7 @@ function App() {
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
                 jsBridgeKey: "tonkeeper1234",
+                universalLink: "https://app.binance.com/cedefi/wc",
                 platforms: ["chrome", "safari", "ios", "android"]
               },
               {
@@ -275,6 +276,7 @@ function App() {
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
                 jsBridgeKey: "tonkeeper123",
+                universalLink: "https://app.binance.com/cedefi/wc",
                 platforms: ["chrome", "safari", "ios", "android"]
               }
             ]
