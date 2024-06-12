@@ -114,7 +114,7 @@ export class TonProofService {
       ]);
 
       const result = Buffer.from(await sha256(fullMsg));
-      console.log('checkProof wantedAddress gggg', wantedAddress)
+      console.log('checkProof wantedAddress gggg', result,  message.signature, publicKey)
       return sign.detached.verify(result, message.signature, publicKey);
     } catch (e) {
       return false;
