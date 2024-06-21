@@ -271,6 +271,16 @@ function App() {
                 platforms: ["chrome", "safari", "ios", "android"]
               },
               {
+                appName: "nora",
+                name: "nora",
+                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+                tondns: "",
+                aboutUrl: "https://www.safepal.com",
+                universalLink: "https://app.binance.com/cedefi",
+                bridgeUrl: "https://bridge.tonapi.io/bridge",
+                platforms: ["chrome", "safari", "ios", "android"]
+              },
+              {
                 appName: "new-wallet",
                 name: "new-wallet",
                 imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
