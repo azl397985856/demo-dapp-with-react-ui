@@ -277,6 +277,7 @@ function App() {
                 tondns: "",
                 aboutUrl: "https://www.safepal.com",
                 universalLink: "https://app.binance.com/cedefi",
+                deepLink: 'bnc://app.binance.com/cedefi/ton-connect',
                 bridgeUrl: "https://bridge.tonapi.io/bridge",
                 platforms: ["chrome", "safari", "ios", "android"]
               },
