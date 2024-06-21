@@ -1,10 +1,11 @@
 import './App.scss'
-import {THEME, TonConnectUIProvider} from "@tonconnect/ui-react";
-import {Header} from "./components/Header/Header";
-import {TxForm} from "./components/TxForm/TxForm";
-import {Footer} from "./components/Footer/Footer";
-import {TonProofDemo} from "./components/TonProofDemo/TonProofDemo";
-import {CreateJettonDemo} from "./components/CreateJettonDemo/CreateJettonDemo";
+import { THEME, TonConnectUIProvider } from "@tonconnect/ui-react";
+import { Header } from "./components/Header/Header";
+import { TxForm } from "./components/TxForm/TxForm";
+import { Footer } from "./components/Footer/Footer";
+import { TonProofDemo } from "./components/TonProofDemo/TonProofDemo";
+import { CreateJettonDemo } from "./components/CreateJettonDemo/CreateJettonDemo";
+import { useState } from 'react';
 
 
 type Feature =
@@ -160,7 +161,7 @@ const tonkeeper1234 = {
             //       code: 400,
             //       message: "don't support ton_proof for now."
             //   }
-       
+
             // }
             {
               name: 'ton_proof',
@@ -208,7 +209,7 @@ const tonkeeper1234 = {
     },
     async send(req: AppRequest): Promise<WalletResponse> {
       console.log('send', req)
-       // TODO: [TON]  disconnect 需要调用 notify 来触发用户注册的 handler
+      // TODO: [TON]  disconnect 需要调用 notify 来触发用户注册的 handler
       // req.method: signData, sendTransaction, disconnect, [signMessage???]
       return {
         result: 'mock singature',
@@ -253,58 +254,67 @@ const tonkeeper1234 = {
 window.tonkeeper1234 = tonkeeper1234
 
 function App() {
+  const [deeplink, setDeepLink] = useState('')
   return (
-      <TonConnectUIProvider
-          manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
-          uiPreferences={{ theme: THEME.DARK }}
-          walletsListConfiguration={{
-            includeWallets: [
-              {
-                appName: "tk",
-                name: "tk",
-                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
-                tondns: "",
-                aboutUrl: "https://www.safepal.com",
-                jsBridgeKey: "tonkeeper1234",
-                universalLink: "http://localhost:1234",
-                bridgeUrl: "https://bridge.tonapi.io/bridge",
-                platforms: ["chrome", "safari", "ios", "android"]
-              },
-              {
-                appName: "nora",
-                name: "nora",
-                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
-                tondns: "",
-                aboutUrl: "https://www.safepal.com",
-                universalLink: "https://app.binance.com/cedefi",
-                deepLink: 'bnc://app.binance.com/cedefi/ton-connect',
-                bridgeUrl: "https://bridge.tonapi.io/bridge",
-                platforms: ["chrome", "safari", "ios", "android"]
-              },
-              {
-                appName: "new-wallet",
-                name: "new-wallet",
-                imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
-                tondns: "",
-                aboutUrl: "https://www.safepal.com",
-                jsBridgeKey: "tonkeeper123",
-                universalLink: "https://app.binance.com/cedefi/wc",
-                platforms: ["chrome", "safari", "ios", "android"]
-              }
-            ]
-          }}
-          actionsConfiguration={{
-              twaReturnUrl: 'https://t.me/DemoDappWithTonConnectBot/demo'
-          }}
-      >
-        <div className="app">
-            <Header />
-            <TxForm />
-            <CreateJettonDemo />
-            <TonProofDemo />
-            <Footer />
-        </div>
-      </TonConnectUIProvider>
+    <TonConnectUIProvider
+      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
+      uiPreferences={{ theme: THEME.DARK }}
+      walletsListConfiguration={{
+        includeWallets: [
+          {
+            appName: "tk",
+            name: "tk",
+            imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+            tondns: "",
+            aboutUrl: "https://www.safepal.com",
+            jsBridgeKey: "tonkeeper1234",
+            universalLink: "http://localhost:1234",
+            bridgeUrl: "https://bridge.tonapi.io/bridge",
+            platforms: ["chrome", "safari", "ios", "android"]
+          },
+          {
+            appName: "nora",
+            name: "nora",
+            imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+            tondns: "",
+            aboutUrl: "https://www.safepal.com",
+            universalLink: "https://app.binance.com/cedefi",
+            deepLink: 'bnc://app.binance.com/cedefi/ton-connect',
+            bridgeUrl: "https://bridge.tonapi.io/bridge",
+            platforms: ["chrome", "safari", "ios", "android"]
+          },
+          {
+            appName: "new-wallet",
+            name: "new-wallet",
+            imageUrl: "https://s.pvcliping.com/web/public_image/SafePal_x288.png",
+            tondns: "",
+            aboutUrl: "https://www.safepal.com",
+            jsBridgeKey: "tonkeeper123",
+            universalLink: "https://app.binance.com/cedefi/wc",
+            platforms: ["chrome", "safari", "ios", "android"]
+          }
+        ]
+      }}
+      actionsConfiguration={{
+        twaReturnUrl: 'https://t.me/DemoDappWithTonConnectBot/demo'
+      }}
+    >
+      <div className="app">
+        <input onChange={e => {
+          setDeepLink(e.target.value)
+        }}></input>
+        <button onClick={() => {
+          window.open(deeplink)
+        }}>
+          open deeplink
+        </button>
+        <Header />
+        <TxForm />
+        <CreateJettonDemo />
+        <TonProofDemo />
+        <Footer />
+      </div>
+    </TonConnectUIProvider>
   )
 }
 
