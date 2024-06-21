@@ -300,7 +300,7 @@ function App() {
       }}
     >
       <div className="app">
-        <input onChange={e => {
+        <input value={deeplink} onChange={e => {
           setDeepLink(e.target.value)
         }}></input>
         <button onClick={() => {
