@@ -269,6 +269,7 @@ function App() {
             aboutUrl: "https://www.safepal.com",
             jsBridgeKey: "tonkeeper1234",
             universalLink: "http://localhost:1234",
+            deepLink: 'bnc://app.binance.com/cedefi/ton-connect',
             bridgeUrl: "https://bridge.tonapi.io/bridge",
             platforms: ["chrome", "safari", "ios", "android"]
           },
