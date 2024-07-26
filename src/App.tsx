@@ -257,7 +257,7 @@ function App() {
   const [deeplink, setDeepLink] = useState('')
   return (
     <TonConnectUIProvider
-      manifestUrl="https://lucifer.ren/demo-dapp-with-react-ui/tonconnect-manifest.json"
+      manifestUrl="https://app.ston.fi/tonconnect-manifest.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         includeWallets: [

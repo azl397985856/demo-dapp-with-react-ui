@@ -11,7 +11,8 @@ const allowedDomains = [
   'ton-connect.github.io',
   'localhost:5173',
   'localhost:1234',
-  "lucifer.ren"
+  "lucifer.ren",
+  "app.ston.fi"
 ];
 const validAuthTime = 150 * 60 * 60 * 24; // 150 days
 
