@@ -271,7 +271,7 @@ function App() {
             universalLink: "http://localhost:1234",
             deepLink: 'bnc://app.binance.com/cedefi/ton-connect',
             bridgeUrl: "https://bridge.tonapi.io/bridge",
-            platforms: ["chrome", "safari", "ios", "android"]
+            platforms: ["chrome", "safari", "ios", "android"],
           },
           {
             appName: "nora",
