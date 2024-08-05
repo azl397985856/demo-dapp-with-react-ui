@@ -4,7 +4,7 @@ import {
   SendTransactionRequest,
   TonProofItemReplySuccess
 } from "@tonconnect/ui-react";
-import './patch-local-storage-for-github-pages';
+// import './patch-local-storage-for-github-pages';
 import {CreateJettonRequestDto} from "./server/dto/create-jetton-request-dto";
 
 class TonProofDemoApiService {

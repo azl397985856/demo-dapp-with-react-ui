@@ -1,4 +1,4 @@
-import './patch-local-storage-for-github-pages';
+// import './patch-local-storage-for-github-pages';
 import './polyfills';
 import eruda from "eruda";
 
