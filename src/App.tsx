@@ -11,7 +11,7 @@ function App() {
   const [deeplink, setDeepLink] = useState('')
   return (
     <TonConnectUIProvider
-      manifestUrl="https://app.ston.fi/tonconnect-manifest.json"
+      manifestUrl="https://game.catizen.ai/tgCat/game/manifests/ton-release.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         // includeWallets: [
