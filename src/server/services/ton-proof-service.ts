@@ -12,7 +12,8 @@ const allowedDomains = [
   'localhost:5173',
   'localhost:1234',
   "lucifer.ren",
-  "app.ston.fi"
+  "app.ston.fi",
+  "frogs.digital"
 ];
 const validAuthTime = 150 * 60 * 60 * 24; // 150 days
 
