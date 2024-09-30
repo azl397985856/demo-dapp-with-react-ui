@@ -58,10 +58,10 @@ export class TonProofService {
       if (!address.equals(wantedAddress)) {
         return false;
       }
-      console.log('checkProof allowedDomains', allowedDomains)
-      if (!allowedDomains.includes(payload.proof.domain.value)) {
-        return false;
-      }
+      // console.log('checkProof allowedDomains', allowedDomains)
+      // if (!allowedDomains.includes(payload.proof.domain.value)) {
+      //   return false;
+      // }
 
       const now = Math.floor(Date.now() / 1000);
       console.log('checkProof allowedDomains', now - validAuthTime)
