@@ -10,7 +10,7 @@ function App() {
 
   return (
     <TonConnectUIProvider
-      manifestUrl="https://frogs.digital1/assets/manifest.json"
+      manifestUrl="https://frogs.digital/assets/manifest.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         // includeWallets: [
