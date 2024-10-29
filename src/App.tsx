@@ -1,17 +1,16 @@
 import './App.scss'
-import { THEME, TonConnectUIProvider } from "@tonconnect/ui-react";
+import { THEME, TonConnectUIProvider, useTonConnectModal } from "@tonconnect/ui-react";
 import { Header } from "./components/Header/Header";
 import { TxForm } from "./components/TxForm/TxForm";
 import { Footer } from "./components/Footer/Footer";
 import { TonProofDemo } from "./components/TonProofDemo/TonProofDemo";
 import { CreateJettonDemo } from "./components/CreateJettonDemo/CreateJettonDemo";
-import { useState } from 'react';
 
 function App() {
-  const [deeplink, setDeepLink] = useState('')
+
   return (
     <TonConnectUIProvider
-      manifestUrl="https://frogs.digital/assets/manifest.json"
+      manifestUrl="https://frogs.digital1/assets/manifest.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         // includeWallets: [
@@ -35,14 +34,6 @@ function App() {
       }}
     >
       <div className="app">
-        <input value={deeplink} onChange={e => {
-          setDeepLink(e.target.value)
-        }}></input>
-        <button onClick={() => {
-          window.open(deeplink)
-        }}>
-          open deeplink
-        </button>
         <Header />
         <TxForm />
         <CreateJettonDemo />
