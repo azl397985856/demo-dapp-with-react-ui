@@ -10,7 +10,7 @@ function App() {
 
   return (
     <TonConnectUIProvider
-      manifestUrl="https://frogs.digital/assets/manifest.json"
+      manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
       uiPreferences={{ theme: THEME.DARK }}
       walletsListConfiguration={{
         // includeWallets: [
