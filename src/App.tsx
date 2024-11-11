@@ -5,9 +5,10 @@ import { TxForm } from "./components/TxForm/TxForm";
 import { Footer } from "./components/Footer/Footer";
 import { TonProofDemo } from "./components/TonProofDemo/TonProofDemo";
 import { CreateJettonDemo } from "./components/CreateJettonDemo/CreateJettonDemo";
+import { useState } from 'react';
 
 function App() {
-
+  const [url, setUrl] = useState('https://www.okx.com/download?appendQuery=true&deeplink=okx://web3/wallet/tonconnect')
   return (
     <TonConnectUIProvider
       manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
@@ -35,6 +36,12 @@ function App() {
     >
       <div className="app">
         <Header />
+        <input value={url} onChange={(e) => {
+          setUrl(e.target.value)
+        }}></input>
+        <button onClick={() => {
+          window.open(url)
+        }}>  </button>
         <TxForm />
         <CreateJettonDemo />
         <TonProofDemo />
