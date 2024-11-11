@@ -41,7 +41,7 @@ function App() {
         }}></input>
         <button onClick={() => {
           window.open(url)
-        }}>  </button>
+        }}> window.open </button>
         <TxForm />
         <CreateJettonDemo />
         <TonProofDemo />
