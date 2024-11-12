@@ -36,12 +36,12 @@ function App() {
     >
       <div className="app">
         <Header />
-        <input value={url} onChange={(e) => {
+        {/* <input value={url} onChange={(e) => {
           setUrl(e.target.value)
         }}></input>
         <button onClick={() => {
           window.open(url)
-        }}> window.open </button>
+        }}> window.open </button> */}
         <TxForm />
         <CreateJettonDemo />
         <TonProofDemo />
