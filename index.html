@@ -11,6 +11,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // 初始化 Telegram Web App
+      Telegram.WebApp.ready();
+  
+      // 获取传递的参数
+      const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
+      const startParameter = initDataUnsafe.query_id ? initDataUnsafe.query_id : null;
+  
+      alert('Start Parameter:', startParameter);
+
+      alert(JSON.stringify(initDataUnsafe))
+  
+      // 你可以根据需要处理这些参数
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
