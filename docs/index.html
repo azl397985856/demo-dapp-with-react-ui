@@ -18,21 +18,8 @@
 
 function onVisibilityChange() {
   if (document.visibilityState === 'visible') {
-        // 初始化 Telegram Web App
-        Telegram.WebApp.ready();
-
-        // 获取传递的参数
-        const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
-        const startParameter = initDataUnsafe.start_param;
-
-        console.log('Start Parameter:', startParameter);
-
-        // 解析 startParameter 获取 address
-        const params = new URLSearchParams(startParameter);
-        const address = params.get('address');
-
-        console.log('Address:', address);
-        alert(JSON.stringify(startParameter))
+    
+        alert(decodeURIComponent(decodeURIComponent(window.location.search)))
   }
 }
 
