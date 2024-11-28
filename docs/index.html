@@ -14,31 +14,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-
-function onVisibilityChange() {
-  if (document.visibilityState === 'visible') {
-     // 初始化 Telegram Web App
-     Telegram.WebApp.ready();
-
-// 获取传递的参数
-const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
-const startParameter = initDataUnsafe.start_param;
-
-console.log('Start Parameter:', startParameter);
-      alert(JSON.stringify(initDataUnsafe))
-      alert(location.href)
-  }
-}
-
-// 添加 visibilitychange 事件监听器
-document.addEventListener('visibilitychange', onVisibilityChange);
-
-// 示例：在页面加载时立即检查一次页面的可见性
-if (document.visibilityState === 'visible') {
-  onVisibilityChange();
-}
-    </script>
     
   </body>
 </html>
