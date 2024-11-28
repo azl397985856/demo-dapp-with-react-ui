@@ -23,15 +23,17 @@ function onVisibilityChange() {
           // 初始化 Telegram Web App
           Telegram.WebApp.ready();
   
-  // 获取传递的参数
-  const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
-  const startParameter = initDataUnsafe.query_id ? initDataUnsafe.query_id : null;
+      // 初始化 Telegram Web App
+      Telegram.WebApp.ready();
 
-  alert('Start Parameter:', startParameter);
+// 获取当前 URL
+const urlParams = new URLSearchParams(window.location.search);
 
-  alert(JSON.stringify(initDataUnsafe))
-  
-  alert(decodeURIComponent(window.location.href))
+// 获取传递的参数
+const address = urlParams.get('address');
+
+console.log('Address:', address);
+alert(address)
   // 你可以根据需要处理这些参数
 
   // 定义在页面可见时要执行的函数
