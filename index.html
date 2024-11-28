@@ -29,7 +29,7 @@ function onVisibilityChange() {
 
   alert(JSON.stringify(initDataUnsafe))
   
-  alert(window.location.href)
+  alert(decodeURIComponent(window.location.href))
   // 你可以根据需要处理这些参数
 
   // 定义在页面可见时要执行的函数
