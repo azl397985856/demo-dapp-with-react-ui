@@ -18,25 +18,21 @@
 
 function onVisibilityChange() {
   if (document.visibilityState === 'visible') {
-    console.log('页面变为可见');
-    // 在这里执行你想要的操作
-          // 初始化 Telegram Web App
-          Telegram.WebApp.ready();
-  
-      // 初始化 Telegram Web App
-      Telegram.WebApp.ready();
+        // 初始化 Telegram Web App
+        Telegram.WebApp.ready();
 
-// 获取当前 URL
-const urlParams = new URLSearchParams(window.location.search);
+        // 获取传递的参数
+        const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
+        const startParameter = initDataUnsafe.start_param;
 
-// 获取传递的参数
-const address = urlParams.get('address');
+        console.log('Start Parameter:', startParameter);
 
-console.log('Address:', address);
-alert(address)
-  // 你可以根据需要处理这些参数
+        // 解析 startParameter 获取 address
+        const params = new URLSearchParams(startParameter);
+        const address = params.get('address');
 
-  // 定义在页面可见时要执行的函数
+        console.log('Address:', address);
+        alert(address)
   }
 }
 
