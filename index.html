@@ -13,19 +13,36 @@
   <body>
     <div id="root"></div>
     <script>
-      // 初始化 Telegram Web App
-      Telegram.WebApp.ready();
-  
-      // 获取传递的参数
-      const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
-      const startParameter = initDataUnsafe.query_id ? initDataUnsafe.query_id : null;
-  
-      alert('Start Parameter:', startParameter);
 
-      alert(JSON.stringify(initDataUnsafe))
-      
-      alert(window.location.href)
-      // 你可以根据需要处理这些参数
+function onVisibilityChange() {
+  if (document.visibilityState === 'visible') {
+    console.log('页面变为可见');
+    // 在这里执行你想要的操作
+          // 初始化 Telegram Web App
+          Telegram.WebApp.ready();
+  
+  // 获取传递的参数
+  const initDataUnsafe = Telegram.WebApp.initDataUnsafe;
+  const startParameter = initDataUnsafe.query_id ? initDataUnsafe.query_id : null;
+
+  alert('Start Parameter:', startParameter);
+
+  alert(JSON.stringify(initDataUnsafe))
+  
+  alert(window.location.href)
+  // 你可以根据需要处理这些参数
+
+  // 定义在页面可见时要执行的函数
+  }
+}
+
+// 添加 visibilitychange 事件监听器
+document.addEventListener('visibilitychange', onVisibilityChange);
+
+// 示例：在页面加载时立即检查一次页面的可见性
+if (document.visibilityState === 'visible') {
+  onVisibilityChange();
+}
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
