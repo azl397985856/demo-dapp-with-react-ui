@@ -11,6 +11,7 @@
     "pages": "yarn build && git add . && git commit -m 'publish' && git push"
   },
   "dependencies": {
+    "@noble/curves": "^1.7.0",
     "@ton-community/assets-sdk": "^0.0.4",
     "@ton/core": "^0.56.3",
     "@ton/crypto": "^3.2.0",

@@ -2,6 +2,7 @@ import {sha256} from "@ton/crypto";
 import {Address, Cell, contractAddress, loadStateInit} from "@ton/ton";
 import {Buffer} from "buffer";
 import {randomBytes, sign} from "tweetnacl";
+import { ed25519 } from '@noble/curves/ed25519';
 import {CheckProofRequestDto} from "../dto/check-proof-request-dto";
 import {tryParsePublicKey} from "../wrappers/wallets-data";
 
@@ -86,6 +87,7 @@ export class TonProofService {
       wc.writeUInt32BE(message.workchain, 0);
 
       const ts = Buffer.alloc(8);
+      // @ts-ignore
       ts.writeBigUInt64LE(BigInt(message.timestamp), 0);
 
       const dl = Buffer.alloc(4);
@@ -117,6 +119,7 @@ export class TonProofService {
 
       const result = Buffer.from(await sha256(fullMsg));
       console.log('checkProof wantedAddress gggg', fullMsg, result, message.signature, publicKey)
+      console.log('ed25519.verify(sig, bufferMessage, publicKey)', ed25519.verify(message.signature, result, publicKey))
       return sign.detached.verify(result, message.signature, publicKey);
     } catch (e) {
       return false;

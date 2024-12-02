@@ -51,6 +51,7 @@ export const createJetton: HttpResponseResolver = async ({request}) => {
       content: internalOnchainContentToCell({
         name: body.name,
         description: body.description,
+        // @ts-ignore
         image_data: Buffer.from(body.image_data, 'ascii').toString('base64'),
         symbol: body.symbol,
         decimals: body.decimals,
